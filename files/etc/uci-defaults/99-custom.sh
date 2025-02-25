@@ -50,9 +50,9 @@ elif [ "$count" -gt 1 ]; then
    uci set network.wan.device="$wan_ifname"
    # WAN接口默认DHCP
    uci set network.wan.proto='dhcp'
-   # 设置WAN6接口基础配置
+   # 设置WAN6接口基础配置 eth0
    uci set network.wan6=interface
-   uci set network.wan6.device='@wan'
+   uci set network.wan6.device="$wan_ifname"
    # 更新LAN接口成员
    # 查找对应设备的section名称
    section=$(uci show network | awk -F '[.=]' '/\.@?device\[\d+\]\.name=.br-lan.$/ {print $2; exit}')
@@ -83,6 +83,8 @@ elif [ "$count" -gt 1 ]; then
       uci set network.wan.password=$pppoe_password
       uci set network.wan.peerdns='1'
       uci set network.wan.auto='1'
+      # 设置ipv6 默认不配置协议
+      uci set network.wan6.proto='none'
       echo "PPPoE configuration completed successfully." >> $LOGFILE
    else
       echo "PPPoE is not enabled. Skipping configuration." >> $LOGFILE
