@@ -64,13 +64,8 @@ jobs:
           profiles="${{ github.event.inputs.profile }}"
           include_docker="${{ github.event.inputs.include_docker }}"
     
-          if [ "$profiles" = "glinet_gl-b2200" ]; then
-            tag=ipq40xx-generic-openwrt-24.10.1
-            echo "platform=ipq40xx/generic" >> $GITHUB_ENV
-          else
-            tag=mediatek-filogic-openwrt-24.10.1
-            echo "platform=mediatek/filogic" >> $GITHUB_ENV
-          fi
+          tag=qualcommax-ipq60xx-snapshot
+          echo "platform=qualcommax/ipq60xx" >> $GITHUB_ENV
           
           IFS=',' read -r -a profile_array <<< "$profiles"
           
@@ -110,8 +105,8 @@ jobs:
       - name: Upload ImmortalWrt as release assets
         uses: softprops/action-gh-release@v2.2.1
         with:
-          tag_name: Autobuild-GL-iNet
-          name: ImmortalWrt-GL-iNet
+          tag_name: Autobuild-GL-iNet-axt1800
+          name: ImmortalWrt-GL-iNet-axt1800
           body_path: ${{ github.workspace }}/mediatek-filogic/info.md
           files: |
             ${{ github.workspace }}/*.bin
