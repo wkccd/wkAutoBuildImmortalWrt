@@ -10,7 +10,7 @@ on:
           - glinet_gl-mt3000
           - glinet_gl-mt2500
           - glinet_gl-mt6000
-          - glinet_gl-b2200
+          - glinet_gl-axt1800
         default: glinet_gl-mt3000
       include_docker:
         description: |
