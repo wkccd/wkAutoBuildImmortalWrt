@@ -64,7 +64,7 @@ jobs:
           profiles="${{ github.event.inputs.profile }}"
           include_docker="${{ github.event.inputs.include_docker }}"
     
-          tag=qualcommax-ipq60xx-snapshot
+          tag=qualcommax-ipq60xx-master
           echo "platform=qualcommax/ipq60xx" >> $GITHUB_ENV
           
           IFS=',' read -r -a profile_array <<< "$profiles"
