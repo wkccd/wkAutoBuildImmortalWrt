@@ -65,6 +65,8 @@ PACKAGES="$PACKAGES luci-i18n-dufs-zh-cn"
 PACKAGES="$PACKAGES luci-app-store"
 # 首页和网络向导
 PACKAGES="$PACKAGES luci-i18n-quickstart-zh-cn"
+# 去广告adghome
+PACKAGES="$PACKAGES luci-app-adguardhome"
 # 代理相关
 PACKAGES="$PACKAGES luci-app-ssr-plus"
 PACKAGES="$PACKAGES luci-app-passwall2"
