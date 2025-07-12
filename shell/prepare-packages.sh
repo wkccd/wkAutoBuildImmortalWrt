@@ -19,6 +19,11 @@ done
 find "$TEMP_DIR" -type f -name "*.ipk" -exec cp -v {} "$TARGET_DIR"/ \;
 
 # 2. 收集 extra-packages/*/ 下的 .ipk 文件（只查一级子目录）
-find "$BASE_DIR" -mindepth 2 -maxdepth 2 -type f -name "*.ipk" -exec cp -v {} "$TARGET_DIR"/ \;
+echo "📂 当前扫描路径: $BASE_DIR"
+find "$BASE_DIR" -mindepth 2 -maxdepth 2 -type f -name "*.ipk" \
+  -exec echo "👉 Found:" {} \; \
+  -exec cp -v {} "$TARGET_DIR"/ \;
+
+
 
 echo "✅ 所有 .ipk 文件已整理至 $TARGET_DIR/"
