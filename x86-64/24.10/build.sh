@@ -26,7 +26,6 @@ git clone --depth=1 https://github.com/wukongdaily/store.git /tmp/store-run-repo
 mkdir -p /home/build/immortalwrt/extra-packages
 cp -r /tmp/store-run-repo/run/x86/* /home/build/immortalwrt/extra-packages/
 
-
 echo "✅ Run files copied to extra-packages:"
 ls -lh /home/build/immortalwrt/extra-packages/*.run
 # 解压并拷贝ipk到packages目录
@@ -35,8 +34,6 @@ ls -lah /home/build/immortalwrt/packages/
 
 # 输出调试信息
 echo "$(date '+%Y-%m-%d %H:%M:%S') - 开始构建固件..."
-
-
 
 # 定义所需安装的包列表 下列插件你都可以自行删减
 PACKAGES=""
@@ -57,10 +54,11 @@ PACKAGES="$PACKAGES openssh-sftp-server"
 PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
 # 文件管理器
 PACKAGES="$PACKAGES luci-i18n-filemanager-zh-cn"
-# 静态文件服务器dufs
+# 静态文件服务器dufs(推荐)
 PACKAGES="$PACKAGES luci-i18n-dufs-zh-cn"
 
-# 仓库外的第三方插件
+# ============= imm仓库外的第三方插件==============
+
 # istore商店
 PACKAGES="$PACKAGES luci-app-store"
 # 首页和网络向导
@@ -71,13 +69,17 @@ PACKAGES="$PACKAGES luci-app-adguardhome"
 PACKAGES="$PACKAGES luci-app-ssr-plus"
 PACKAGES="$PACKAGES luci-app-passwall2"
 PACKAGES="$PACKAGES luci-i18n-nikki-zh-cn"
+# VPN
 PACKAGES="$PACKAGES luci-app-tailscale"
 PACKAGES="$PACKAGES luci-i18n-tailscale-zh-cn"
-# 一键扩容 by sirpdboy 
+# 分区扩容 by sirpdboy 
 PACKAGES="$PACKAGES luci-app-partexp"
 PACKAGES="$PACKAGES luci-i18n-partexp-zh-cn"
 # 酷猫主题 by sirpdboy 
 PACKAGES="$PACKAGES luci-theme-kucat"
+# 网络测速 by sirpdboy 
+PACKAGES="$PACKAGES luci-app-netspeedtest"
+PACKAGES="$PACKAGES luci-i18n-netspeedtest-zh-cn"
 
 # 判断是否需要编译 Docker 插件
 if [ "$INCLUDE_DOCKER" = "yes" ]; then
