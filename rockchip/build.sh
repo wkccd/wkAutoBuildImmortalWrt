@@ -33,6 +33,10 @@ ls -lh /home/build/immortalwrt/extra-packages/*.run
 # 解压并拷贝ipk到packages目录
 sh prepare-packages.sh
 ls -lah /home/build/immortalwrt/packages/
+# 添加架构优先级信息
+sed -i '1i\
+arch aarch64_generic 10\n\
+arch aarch64_cortex-a53 15' repositories.conf
 
 # 输出调试信息
 echo "$(date '+%Y-%m-%d %H:%M:%S') - 开始构建固件..."
@@ -67,9 +71,9 @@ PACKAGES="$PACKAGES luci-i18n-quickstart-zh-cn"
 # 去广告adghome
 PACKAGES="$PACKAGES luci-app-adguardhome"
 # 代理相关
-#PACKAGES="$PACKAGES luci-app-ssr-plus"
+PACKAGES="$PACKAGES luci-app-ssr-plus"
 PACKAGES="$PACKAGES luci-app-passwall2"
-#PACKAGES="$PACKAGES luci-i18n-nikki-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-nikki-zh-cn"
 # VPN
 PACKAGES="$PACKAGES luci-app-tailscale"
 PACKAGES="$PACKAGES luci-i18n-tailscale-zh-cn"
