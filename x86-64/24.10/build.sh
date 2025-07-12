@@ -34,7 +34,7 @@ sh prepare-packages.sh
 ls -lah /home/build/immortalwrt/packages/
 
 # 输出调试信息
-echo "$(date '+%Y-%m-%d %H:%M:%S') - 开始编译..."
+echo "$(date '+%Y-%m-%d %H:%M:%S') - 开始构建固件..."
 
 
 
