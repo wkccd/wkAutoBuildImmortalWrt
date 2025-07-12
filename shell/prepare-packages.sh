@@ -8,7 +8,6 @@ TARGET_DIR="packages"
 rm -rf "$TEMP_DIR" "$TARGET_DIR"
 mkdir -p "$TEMP_DIR" "$TARGET_DIR"
 
-wget -O "$BASE_DIR"/ssrp.run https://github.com/wukongdaily/RunFilesBuilder/releases/download/ShadowsocksPlus%2B/ssrp_x86_64-190-r78.run
 
 # 遍历 extra-packages 下的所有 .run 文件
 for run_file in "$BASE_DIR"/*.run; do
