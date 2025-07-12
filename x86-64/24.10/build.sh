@@ -63,6 +63,7 @@ PACKAGES="$PACKAGES luci-i18n-quickstart-zh-cn"
 PACKAGES="$PACKAGES luci-app-ssr-plus"
 PACKAGES="$PACKAGES luci-app-passwall2"
 PACKAGES="$PACKAGES luci-i18n-nikki-zh-cn"
+PACKAGES="$PACKAGES luci-app-tailscale"
 PACKAGES="$PACKAGES luci-i18n-tailscale-zh-cn"
 
 # 判断是否需要编译 Docker 插件
