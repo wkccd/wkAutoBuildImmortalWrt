@@ -22,9 +22,10 @@ cat /home/build/immortalwrt/files/etc/config/pppoe-settings
 echo "🔄 Cloning run file repo..."
 git clone --depth=1 https://github.com/wukongdaily/store.git /tmp/store-run-repo
 
-# 拷贝 run/x86 下所有 run 文件到 extra-packages 目录
+# 拷贝 run/x86 下所有 run 文件和ipk文件 到 extra-packages 目录
 mkdir -p /home/build/immortalwrt/extra-packages
-cp /tmp/store-run-repo/run/x86/*.run /home/build/immortalwrt/extra-packages/
+cp -r /tmp/store-run-repo/run/x86/* /home/build/immortalwrt/extra-packages/
+
 
 echo "✅ Run files copied to extra-packages:"
 ls -lh /home/build/immortalwrt/extra-packages/*.run
