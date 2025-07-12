@@ -66,6 +66,9 @@ PACKAGES="$PACKAGES luci-i18n-nikki-zh-cn"
 PACKAGES="$PACKAGES luci-app-tailscale"
 PACKAGES="$PACKAGES luci-i18n-tailscale-zh-cn"
 
+PACKAGES="$PACKAGES luci-app-partexp"
+PACKAGES="$PACKAGES luci-theme-kucat"
+
 # 判断是否需要编译 Docker 插件
 if [ "$INCLUDE_DOCKER" = "yes" ]; then
     PACKAGES="$PACKAGES luci-i18n-dockerman-zh-cn"
