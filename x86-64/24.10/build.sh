@@ -55,18 +55,26 @@ PACKAGES="$PACKAGES luci-app-openclash"
 PACKAGES="$PACKAGES luci-i18n-homeproxy-zh-cn"
 PACKAGES="$PACKAGES openssh-sftp-server"
 PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
+# 文件管理器
 PACKAGES="$PACKAGES luci-i18n-filemanager-zh-cn"
+# 静态文件服务器dufs
+PACKAGES="$PACKAGES luci-i18n-dufs-zh-cn"
 
-# 仓库外
+# 仓库外的第三方插件
+# istore商店
 PACKAGES="$PACKAGES luci-app-store"
+# 首页和网络向导
 PACKAGES="$PACKAGES luci-i18n-quickstart-zh-cn"
+# 代理相关
 PACKAGES="$PACKAGES luci-app-ssr-plus"
 PACKAGES="$PACKAGES luci-app-passwall2"
 PACKAGES="$PACKAGES luci-i18n-nikki-zh-cn"
 PACKAGES="$PACKAGES luci-app-tailscale"
 PACKAGES="$PACKAGES luci-i18n-tailscale-zh-cn"
-
+# 一键扩容 by sirpdboy 
 PACKAGES="$PACKAGES luci-app-partexp"
+PACKAGES="$PACKAGES luci-i18n-partexp-zh-cn"
+# 酷猫主题 by sirpdboy 
 PACKAGES="$PACKAGES luci-theme-kucat"
 
 # 判断是否需要编译 Docker 插件
