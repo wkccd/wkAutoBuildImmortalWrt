@@ -62,7 +62,7 @@ PACKAGES="$PACKAGES luci-i18n-quickstart-zh-cn"
 # 去广告adghome
 PACKAGES="$PACKAGES luci-app-adguardhome"
 # 代理相关
-PACKAGES="$PACKAGES luci-app-ssr-plus"
+#PACKAGES="$PACKAGES luci-app-ssr-plus"
 PACKAGES="$PACKAGES luci-app-passwall2"
 PACKAGES="$PACKAGES luci-i18n-nikki-zh-cn"
 # VPN
