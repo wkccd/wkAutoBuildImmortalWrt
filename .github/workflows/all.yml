@@ -30,10 +30,6 @@ on:
       pppoe_password:
         description: "宽带密码 (若启用PPPoE)"
         required: false
-      download_url:
-        description: '请输入下载地址(扩展名 .img.gz/.img.xz/.img.zip)'
-        required: true
-        default: 'https://default.example.com/file.img.gz'
 
 jobs:
   # 第一个项目的构建
@@ -133,25 +129,9 @@ jobs:
           chmod +x "${{ github.workspace }}/img-installer/custom.sh"
           chmod +x "${{ github.workspace }}/img-installer/supportFiles/custom/build.sh"
 
-      - name: Validate Download URL
-        run: |
-          DEFAULT_URL="https://default.example.com/file.img.gz"
-          USER_INPUT_URL="${{ github.event.inputs.download_url }}"
-          
-          if [[ "$USER_INPUT_URL" == "$DEFAULT_URL" ]]; then
-            echo "❌ 错误：请修改默认下载地址！当前地址为无效占位符。"
-            exit 1
-          fi
-          
-          if [[ ! "$USER_INPUT_URL" =~ ^https?://.+\.[gG][zZ]$|^https?://.+\.[xX][zZ]$|^https?://.+\.[zZ][iI][pP]$ ]]; then
-            echo "❌ 错误：地址需以 http(s) 开头且扩展名为 .gz/.xz/.zip"
-            echo "当前输入：$USER_INPUT_URL"
-            exit 1
-          fi
-
       - name: "Build Image"
         run: |
-          download_url="${{ github.event.inputs.download_url }}"
+          download_url="https://github.com/wkccd/wkAutoBuildImmortalWrt/releases/download/Autobuild-x86-64/immortalwrt-24.10.2-x86-64-generic-squashfs-combined-efi.img.gz"
           ./custom.sh "$download_url"
 
       - name: "Publish"
