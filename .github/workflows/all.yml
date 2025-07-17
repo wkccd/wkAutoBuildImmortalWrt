@@ -131,8 +131,11 @@ jobs:
 
       - name: "Build Image"
         run: |
+          echo "========="
+          ls
+          pwd
           download_url="https://github.com/wkccd/wkAutoBuildImmortalWrt/releases/download/Autobuild-x86-64/immortalwrt-24.10.2-x86-64-generic-squashfs-combined-efi.img.gz"
-          ./custom.sh "$download_url"
+          bash img-installer/custom.sh "$download_url"
 
       - name: "Publish"
         uses: softprops/action-gh-release@v2.2.1
