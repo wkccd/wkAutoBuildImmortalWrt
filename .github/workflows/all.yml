@@ -1,9 +1,6 @@
 name: Auto Build ImmortalWrt and Build Custom Installer ISO
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
     inputs:
       profile:
